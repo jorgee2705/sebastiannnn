@@ -1,0 +1,296 @@
+.widget_product_search.divi-ajax-search-ajs-active,
+.widget_search.divi-ajax-search-ajs-active {
+    overflow: visible;
+}
+
+:root {
+    --diviajs-background: #ffffff;
+    --diviajs-background-hovered: #d5d5d5;
+    --diviajs-border-colour: #f6f6f6;
+    --diviajs-view-all-colour: #ff8057;
+    --diviajs-view-all-highlight-colour: #ff5c26;
+    --diviajs-view-all-button-font-color: #ffffff;
+    --diviajs-view-all-button-font-color-hovered: #ffffff;
+    --diviajs-text-colour: #ff8057;
+}
+
+/* Fixes an issue with search results when the menu is under the search module */
+div[class*="_tb_header"].et_pb_row:first-of-type {
+    z-index: 999 !important;
+}
+
+.et_search_outer,
+.et_pb_module.et_pb_search{
+    overflow: unset !important;
+}
+
+/* Woocommerce default on sale label */
+.woocommerce-page span.onsale, 
+.woocommerce span.onsale {
+    z-index: 1 !important;
+}
+
+.divi-ajax-search-ajs-results {
+    position: absolute;
+    overflow: hidden;
+    top: 100%;
+}
+
+.divi-ajax-search-ajs-suggestions {
+    border: 1px solid var(--diviajs-border-colour);
+    border-top: 0;
+}
+.divi-ajax-search-ajs-suggestions > .autocomplete-suggestion {
+    /* border-bottom: 1px solid #d6d6d6; */
+    border-bottom: 0; /* clean style */
+}
+
+.divi-ajax-search-ajs-view-all-holder > a {
+    background: var(--diviajs-view-all-colour);
+    transition: background .5s;
+}
+
+.divi-ajax-search-ajs-view-all-holder > a:hover {
+    background: var(--diviajs-view-all-highlight-colour);
+}
+
+.divi-ajax-search-ajs-product-title {
+    font-weight: 600;
+    color: var(--diviajs-text-colour);
+}
+
+.divi-ajax-search-ajs-product-price span bdi,
+.divi-ajax-search-ajs-product-price span bdi span,
+.divi-ajax-search-ajs-product-price span {
+    color: #000;
+}
+
+.divi-ajax-search-ajs-suggestions {
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--diviajs-background) !important;
+}
+
+.divi-ajax-search-ajs-suggestions > .autocomplete-suggestion {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer;
+    background: 0 0;
+    display: flex;
+    transition: background .5s;
+}
+
+.divi-ajax-search-ajs-suggestions > .autocomplete-suggestion:hover,
+.divi-ajax-search-ajs-suggestions > .autocomplete-suggestion.active {
+    background: var(--diviajs-background-hovered) !important;
+}
+
+.divi-ajax-search-ajs-suggestions > .autocomplete-suggestion:last-child {
+    border-bottom: none;
+    margin-bottom: 10px;
+}
+
+.divi-ajax-search-ajs-suggestions > .autocomplete-suggestion.autocomplete-selected > a {
+    background-color: #f8f8f8;
+}
+
+.divi-ajax-search-ajs-suggestions > .autocomplete-no-suggestion {
+    line-height: 40px;
+    text-align: center;
+}
+
+.divi-ajax-search-ajs-results.has-viewall-button {
+    padding-bottom: 30px;
+}
+
+.divi-ajax-search-ajs-results.has-viewall-button .divi-ajax-search-ajs-suggestions {
+    bottom: 30px;
+}
+
+.divi-ajax-search-ajs-view-all-holder {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    display: none;
+}
+
+.divi-ajax-search-ajs-view-all-holder > a {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: var(--diviajs-view-all-button-font-color) !important;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+}
+
+.divi-ajax-search-ajs-view-all-holder > a:hover {
+    color: var(--diviajs-view-all-button-font-color-hovered) !important;
+}
+
+.divi-ajax-search-ajs-other-result {
+    height: 33px;
+    line-height: 33px;
+    background: #f5f3f3;
+    text-align: left;
+    color: #8b8888;
+    text-transform: uppercase;
+    padding-left: 10px;
+    width: 100%;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+}
+
+.divi-ajax-search-ajs-hide .divi-ajax-search-ajs-suggestions,
+.divi-ajax-search-ajs-hide .divi-ajax-search-ajs-view-all-holder {
+    display: none !important;
+}
+
+.divi-ajax-search-ajs-suggestions .divi-ajax-search-ajs-post,
+.divi-ajax-search-ajs-suggestions .divi-ajax-search-ajs-product {
+    width: 100%;
+    color: #323232;
+}
+
+.divi-ajax-search-ajs-post .divi-ajax-search-ajs-post-image,
+.divi-ajax-search-ajs-product .divi-ajax-search-ajs-product-image {
+    display: inline-block;
+    max-width: 60px;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+.divi-ajax-search-ajs-post .divi-ajax-search-ajs-post-image img,
+.divi-ajax-search-ajs-product .divi-ajax-search-ajs-product-image img {
+    padding: 5px 5px 5px 0;
+    margin: 0;
+}
+
+.divi-ajax-search-ajs-post .divi-ajax-search-ajs-post-title,
+.divi-ajax-search-ajs-product .divi-ajax-search-ajs-product-desc {
+    display: inline-block;
+    padding: 0 10px;
+    vertical-align: top;
+}
+
+.divi-ajax-search-ajs-post .divi-ajax-search-ajs-post-title {
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.autocomplete-suggestion a {
+    display: flex;
+    padding: 10px;
+    transition: 0.2s all;
+}
+
+.divi-ajax-search-ajs-product-title, .divi-ajax-search-ajs-product-title .match-text {
+    font-size: 14px !important;
+}
+
+.divi-ajax-search-ajs-product-price {
+    font-size: 13px;
+}
+
+.divi-ajax-search-ajs-post .divi-ajax-search-ajs-post-title {
+    font-size: 13px;
+    line-height: 1.4;
+    width: 100%;
+}
+
+.divi-ajax-search-ajs-post .divi-ajax-search-ajs-post-title span.post-type {
+    text-transform: uppercase;
+    color: #999;
+    font-size: 11px;
+    margin-left: auto;
+    padding-left: 10px;
+}
+
+.divi-ajax-search-ajs-other-result-wrap {
+    cursor: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none;
+}
+
+.divi-ajax-search-ajs-product-price,
+.divi-ajax-search-ajs-product-price ins {
+    color: #de9915;
+    font-weight: 600;
+}
+
+.divi-ajax-search-ajs-product-price del {
+    margin-right: 5px;
+    color: #999;
+    font-weight: 400;
+}
+
+.divi-ajax-search-ajs-results span.match-text {
+    text-decoration: underline;
+    display: contents;
+}
+
+.et_slide_menu_top .autocomplete-no-suggestion {
+    color: #666;
+}
+
+@media screen and (max-width: 480px) {
+    .divi-ajax-search-ajs-suggestions .divi-ajax-search-ajs-post,
+    .divi-ajax-search-ajs-suggestions .divi-ajax-search-ajs-product {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        text-align: left;
+    }
+
+    .divi-ajax-search-ajs-suggestions .divi-ajax-search-ajs-product {
+        padding: 5px 10px;
+        border-bottom: 1px solid #f6f6f6;
+    }
+
+    .divi-ajax-search-ajs-post-title {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .divi-ajax-search-ajs-product-title {
+        line-height: 18px;
+    }
+
+    .divi-ajax-search-ajs-post-title,
+    .divi-ajax-search-ajs-other-result {
+        text-align: left;
+    }
+
+    .divi-ajax-search-ajs-post .divi-ajax-search-ajs-post-title span.post-type {
+        margin-left: 0;
+        padding-left: 0;
+        text-align: left;
+        margin-top: 10px;
+    }
+
+    .divi-ajax-search-ajs-post .divi-ajax-search-ajs-post-title {
+        align-items: flex-start;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .divi-ajax-search-ajs-results {
+        min-width: 100vw;
+        border: 0 !important;
+        outline: 0 !important;
+    }
+
+    .divi-ajax-search-ajs-suggestions {
+        min-width: 100%;
+        border: 0 !important;
+        outline: 0 !important;
+    }
+}
